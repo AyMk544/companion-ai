@@ -1,5 +1,11 @@
 import { cn } from "@/lib/utils";
-import { UserButton } from "@clerk/nextjs";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import { Menu, Sparkles } from "lucide-react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
@@ -37,7 +43,14 @@ const Navbar = () => {
           <Sparkles className="size-4 fill-white text-white ml-2" />
         </Button>
         <ModeToggle />
-        <UserButton afterSignOutUrl="/" />
+        <div>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
       </div>
     </div>
   );
