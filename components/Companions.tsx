@@ -30,7 +30,7 @@ const Companions = ({ data }: CompanionsProps) => {
           key={item.id}
           className="bg-primary/10 rounded-xl cursor-pointer hover:opacity-75 transition border-0"
         >
-          <Link href={`/check/${item.id}`}>
+          <Link href={`/chat/${item.id}`}>
             <CardHeader className="flex items-center justify-center text-center text-muted-foreground">
               <div className="relative size-32">
                 <Image
